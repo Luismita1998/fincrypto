@@ -2,6 +2,7 @@ import React from "react"
 import Cryptos from './Components/Cryptos/Cryptos'
 import Header from './Components/Header/Header'
 import './App.css';
+import ChartRYM from './Components/ChartRYM/ChartRYM'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           </nav>
             {/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-             
+            <ChartRYM/>
               <h1 className="h3 mb-0 text-gray-800"></h1>
             </div>
 
