@@ -3,7 +3,7 @@ import Chart from '../Chart/Chart';
 
 
 
-class ChartRYM extends Component{
+class ChartCrypto extends Component{
     constructor(){
         super();
         this.state = {
@@ -12,16 +12,23 @@ class ChartRYM extends Component{
     }
     componentDidMount(){
         console.log("Se cargo el cUmpUnente222");
-        let url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily';
+        let url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=10&interval=daily';
 
         fetch(url)
             .then(respuesta => {
                 return respuesta.json()
             })    
             .then((data) => {
-                console.log(data);
+                const precios = data.prices.map(value=>{
+                    return {
+                        price: value[1].toFixed(2),
+                        name: value[1].toFixed(2)
+                    }
+                });
+                
+                console.log(precios);
                 this.setState({
-                    var: data
+                    var: precios
                 })
             })
             .catch(error => console.log(error))
@@ -29,19 +36,17 @@ class ChartRYM extends Component{
     render(){
         return(
             <React.Fragment>
-                {/* <div className="row card-container">                
+                <div className="row card-container">                
                     { 
                         this.state.var.length === 0 ?
                         <p>Cargando aplicación...</p> :
-                        this.state.var.prices.map((prices, index)=><Chart key={prices.prices + index} dataVar={prices}
-                        //Aqui debemos pasarle el método (borrarTarjeta) al hijo
-                        />) 
+                        <Chart dataVar={this.state.var}/>
                     }
-                </div> */}
+                </div>
             </React.Fragment>
         )
     }
 
 }
 
-export default ChartRYM;
+export default ChartCrypto;
