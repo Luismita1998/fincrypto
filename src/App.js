@@ -1,6 +1,7 @@
 import React from "react"
 import Cryptos from './Components/Cryptos/Cryptos'
 import Header from './Components/Header/Header'
+import './App.css';
 
 function App() {
   return (
@@ -11,10 +12,13 @@ function App() {
         <div id="content">
         <Header/>
           <div className="container-fluid">
+          <nav className="navbar navbar-light bg-light justify-content-between">
+          <button id="cargar" className="btn btn-outline-dark my-2 my-sm-0" type="button">Cargar más tarjetas</button>
+          </nav>
             {/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
              
-              <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+              <h1 className="h3 mb-0 text-gray-800"></h1>
             </div>
 
             {/* <!-- Content Row --> */}
@@ -30,11 +34,11 @@ function App() {
               </div>
             </div>
             {/* Nueva sección Personajes */}
-            <h3 className="h3"> Personajes de películas</h3>
+            <h3 className="h3"></h3>
             {/* Fin nueva sección Personajes */}
             
             {/* Nueva sección Rick and Morty */}
-            <h3 className="h3"> Rick and Morty</h3>
+            <h3 className="h3"> Criptomonedas </h3>
             <Cryptos />
             {/* Fin nueva sección Rick and Morty */}            
           </div>
