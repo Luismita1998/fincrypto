@@ -41,7 +41,7 @@ class Cryptos extends Component{
                 <div className="row card-container">                
                     { 
                         this.state.cryptoGIL.length === 0 ?
-                        <p>Cargando aplicación...</p> :
+                        <iframe src="https://giphy.com/embed/RgxAkfVQWwkjS" width="418" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
                         this.state.cryptoGIL.map((crypto, index)=><Tarjetas key={crypto.name + index} dataCrypto={crypto}
                         //Aqui debemos pasarle el método (borrarTarjeta) al hijo
                         borrar = {(idEliminar) => this.borrarCrypto(idEliminar) }
