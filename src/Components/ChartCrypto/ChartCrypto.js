@@ -39,7 +39,7 @@ class ChartCrypto extends Component{
                 <div className="row card-container">                
                     { 
                         this.state.var.length === 0 ?
-                        <p>Cargando aplicación...</p> :
+                        <iframe src="https://giphy.com/embed/RgxAkfVQWwkjS" width="418" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
                         <Chart dataVar={this.state.var}/>
                     }
                 </div>
