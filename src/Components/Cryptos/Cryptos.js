@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Tarjetas from '../Tarjetas/Tarjetas';
-
+import Header from '../Header/Header';
 
 
 class Cryptos extends Component{
@@ -34,7 +34,14 @@ class Cryptos extends Component{
             cryptoGIL : cryptosRemain
         })
     }
-
+    filtrarCrypto(cryptoAFiltrar){
+        let cryptoFiltrado = this.state.cryptoGIL.filter(crypto =>{
+            return crypto.name.toLowerCase().includes(cryptoAFiltrar.toLowerCase()) 
+        } )
+        this.setState({
+            cryptoGIL : cryptoFiltrado
+        })
+    }
     render(){
         return(
             <React.Fragment>
