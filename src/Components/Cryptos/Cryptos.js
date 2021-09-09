@@ -26,6 +26,14 @@ class Cryptos extends Component{
             })
             .catch(error => console.log(error))
     }
+    borrarCrypto(id){
+        let cryptosRemain = this.state.cryptoGIL.filter(crypto =>{
+            return crypto.id != id
+        })
+        this.setState({
+            cryptoGIL : cryptosRemain
+        })
+    }
 
     render(){
         return(
@@ -36,6 +44,7 @@ class Cryptos extends Component{
                         <p>Cargando aplicación...</p> :
                         this.state.cryptoGIL.map((crypto, index)=><Tarjetas key={crypto.name + index} dataCrypto={crypto}
                         //Aqui debemos pasarle el método (borrarTarjeta) al hijo
+                        borrar = {(idEliminar) => this.borrarCrypto(idEliminar) }
                         />) 
                     }
                 </div>
