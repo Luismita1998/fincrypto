@@ -16,7 +16,7 @@ class Header extends Component{
     controlarCambios(evento){
         this.setState({
             filtrarPor : evento.target.value
-        }, () => this.props.filtrarCrypto(this.state.filtrarPor))
+        }, () => this.props.controlarCambios(this.state.filtrarPor))
     }
     render(){
         return(
