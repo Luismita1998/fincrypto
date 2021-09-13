@@ -15,7 +15,8 @@ class Cryptos extends Component{
             dataDesc: '',
             dataNombre: '',
             dataImg: '',
-            dataMkt: ''
+            dataMkt: '',
+            priceChart: []
         }
     }
     componentDidMount(){
@@ -68,6 +69,7 @@ class Cryptos extends Component{
     chartCryptoInfo(idCrypto){
         console.log("HOLAA");
         let url2 = 'https://api.coingecko.com/api/v3/coins/'+ idCrypto+'?localization=true&tickers=true&market_data=true&community_data=true';
+        let url = 'https://api.coingecko.com/api/v3/coins/'+ idCrypto+'/market_chart?vs_currency=usd&days=10&interval=daily';
 
         fetch(url2)
         .then(respuesta => {
@@ -85,7 +87,25 @@ class Cryptos extends Component{
             })
         })
         .catch(error => console.log(error))
-        
+        fetch(url)
+             .then(respuesta => {
+                  return respuesta.json()
+              })    
+              .then((data2) => {
+                   const precios = data2.prices.map(value=>{
+                    return {
+                        precio: value[1].toFixed(2),
+                        name: value[1].toFixed(2)
+                      }
+                  });
+                  console.log(precios);
+
+                 this.setState({
+                      priceChart: precios
+                   })
+             })
+              .catch(error => console.log(error))
+
         }
     render(){
         return(
@@ -94,7 +114,9 @@ class Cryptos extends Component{
                     dataDesc = {this.state.dataDesc}
                     dataNombre = {this.state.dataNombre}
                     dataImg = {this.state. dataImg}
-                    dataMkt = {this.state.dataMkt}/>
+                    dataMkt = {this.state.dataMkt}
+                    dataMkt = {this.state.dataMkt}
+                    precio = {this.state.priceChart}/>
                  <div>
                     <FiltrarCrypto  filtrarCrypto = { (texto) => this.filtrarCrypto(texto) } />
                     <button onClick= {() => this.masCryptos()} id="cargar" className="btn btn-outline-dark my-2 my-sm-0" type="button">Cargar más 12 Cryptos mas</button>

@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-
+import Chart from '../Chart/Chart';
 
 class Info extends Component{
     constructor(props){
         super(props);
         this.state = {
-            dataId: '',
-            dataDesc: '',
-            dataNombre: '',
-            dataImg: '',
-            dataMkt: ''
+            
         }
     }
     render(){
@@ -20,7 +16,8 @@ class Info extends Component{
                <p>{this.props.dataNombre}</p>
                <img src={this.props.dataImg} alt="" />
                <p>{this.props.dataMkt}</p>
-
+               {console.log(this.props.precio)}
+            <Chart precioChart={this.props.precio}/>
             </React.Fragment>
         )
     }
