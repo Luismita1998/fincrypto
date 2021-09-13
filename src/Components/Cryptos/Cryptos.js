@@ -45,6 +45,9 @@ class Cryptos extends Component{
     render(){
         return(
             <React.Fragment>
+                <div>
+                    <Header filtrarCrypto = { (texto) => this.filtrarCrypto(texto)} />
+                </div>
                 <div className="row card-container">                
                     { 
                         this.state.cryptoGIL.length === 0 ?
