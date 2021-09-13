@@ -11,7 +11,7 @@ class ChartCrypto extends Component{
         }
     }
     componentDidMount(){
-        console.log("Se cargo el cUmpUnente222");
+        console.log("Se cargo el ");
         let url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=10&interval=daily';
 
         fetch(url)

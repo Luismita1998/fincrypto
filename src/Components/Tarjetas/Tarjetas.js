@@ -5,22 +5,8 @@ class Tarjetas extends Component{
     constructor(props){
         super(props)
         this.state = {
-            viewMore: false,
             text:'Ver más',
-            selected: false,
-        }
-    }
-    viewMore(){
-        if(this.state.viewMore){
-            this.setState({
-                viewMore: false,
-                text: 'Ver más'
-            })
-        } else {
-            this.setState({
-                viewMore: true,
-                text: 'Ver menos'
-            })            
+            selected: false
         }
     }
 
@@ -33,8 +19,7 @@ class Tarjetas extends Component{
                     <h4 className="color-nombres" >{this.props.dataCrypto.current_price} US$</h4>
                     <h4 className="color-nombres verde" >{this.props.dataCrypto.price_change_percentage_24h.toFixed(2)} %</h4>
                     <button className="btn btn-outline-danger" onClick = { () => this.props.borrar(this.props.dataCrypto.id)} >Delete</button>
-                    <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Total supply: {this.props.dataCrypto.total_supply} All time High: {this.props.dataCrypto.ath} US$</p>
-                    <p className='more' className="btn btn-success" onClick={()=>this.viewMore()}>{this.state.text}</p>
+                    <button className="btn btn-success" name={this.props.dataCrypto.id} onClick = { () => this.props.infoChart(this.props.dataCrypto.id)} >INFO</button>
                 </div>
                 );
         }else{
@@ -45,8 +30,7 @@ class Tarjetas extends Component{
                     <h4 className="color-nombres" >{this.props.dataCrypto.current_price} US$</h4>
                     <h4 className="color-nombres rojo" >{this.props.dataCrypto.price_change_percentage_24h.toFixed(2)} %</h4>
                     <button className="btn btn-outline-danger" onClick = { () => this.props.borrar(this.props.dataCrypto.id)} >Delete</button>
-                    <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Total supply: {this.props.dataCrypto.total_supply} All time High: {this.props.dataCrypto.ath} US$</p>
-                    <p className='more' className="btn btn-success" onClick={()=>this.viewMore()}>{this.state.text}</p>
+                    <button className="btn btn-success" name={this.props.dataCrypto.id} onClick = { () => this.props.infoChart(this.props.dataCrypto.id)} >INFO</button>
                 </div>
                 );
         }

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import Cryptos from '../Cryptos/Cryptos';
 import './Header.css';
-import FiltrarCrypto from '../FiltrarCrypto/FiltrarCrypto';
 
 class Header extends Component{
     constructor(props){
@@ -18,7 +16,7 @@ class Header extends Component{
     controlarCambios(evento){
         this.setState({
             filtrarPor: evento.target.value
-        }, () => this.props.filtrarCrypto(this.state.filtrarPor))
+        }, () => this.filtrarCrypto(this.state.filtrarPor))
     }
     render(){
         return( 
@@ -32,13 +30,9 @@ class Header extends Component{
                             <a className="nav-item nav-link" href="#">Contacto</a>
                             <a className="nav-item nav-link disabled" href="#">Hola!</a>
                                 <img src="https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
-                        </nav>    
-                        <form onSubmit = {(e) => this.noEnviar(e) }>
-                            <label for='nombre'>Buscar cryptomoneda</label>
-                            <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={ this.state.filtrarPor } />
-                        </form>                    
+                        </nav>         
                         </nav>
-                        
+
                 </header>
             </React.Fragment>
         )

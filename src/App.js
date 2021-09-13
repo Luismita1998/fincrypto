@@ -3,6 +3,7 @@ import Cryptos from './Components/Cryptos/Cryptos'
 import Header from './Components/Header/Header'
 import './App.css';
 import ChartCrypto from './Components/ChartCrypto/ChartCrypto'
+import Info from "./Components/Info/Info";
 
 function App() {
   return (
@@ -14,14 +15,13 @@ function App() {
         <Header/>
           <div className="container-fluid">
           <nav className="navbar navbar-light bg-light justify-content-between">
-          <button id="cargar" className="btn btn-outline-dark my-2 my-sm-0" type="button">Cargar más tarjetas</button>
           </nav>
             {/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
             <ChartCrypto/>
               <h1 className="h3 mb-0 text-gray-800"></h1>
             </div>
-
+            <Info/>
             {/* <!-- Content Row --> */}
             <div className="row">
             
