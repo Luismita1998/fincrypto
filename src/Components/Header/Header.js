@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Cryptos from '../Cryptos/Cryptos';
 import './Header.css';
 
 class Header extends Component{
@@ -19,7 +20,7 @@ class Header extends Component{
         }, () => this.props.controlarCambios(this.state.filtrarPor))
     }
     render(){
-        return(
+        return( 
             <React.Fragment>
                 <header>
                         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
