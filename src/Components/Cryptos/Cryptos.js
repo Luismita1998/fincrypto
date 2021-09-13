@@ -7,7 +7,8 @@ class Cryptos extends Component{
     constructor(){
         super();
         this.state = {
-            cryptoGIL:[]
+            cryptoGIL:[],
+            cryptoInicial: []
         }
     }
     componentDidMount(){
@@ -21,7 +22,8 @@ class Cryptos extends Component{
             .then((data) => {
                 console.log(data);
                 this.setState({
-                    cryptoGIL: data
+                    cryptoGIL: data,
+                    cryptoInicial: data,
                 })
             })
             .catch(error => console.log(error))
@@ -35,7 +37,7 @@ class Cryptos extends Component{
         })
     }
     filtrarCrypto(cryptoAFiltrar){
-        let cryptoFiltrado = this.state.cryptoGIL.filter(crypto =>{
+        let cryptoFiltrado = this.state.cryptoInicial.filter(crypto =>{
             return crypto.name.toLowerCase().includes(cryptoAFiltrar.toLowerCase()) 
         } )
         this.setState({
