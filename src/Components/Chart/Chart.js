@@ -16,7 +16,7 @@ class Chart extends Component{
                             <LineChart width={600} height={300} data={this.props.precioChart} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                             <Line name={this.props.dataNombre} type="monotone" dataKey="name" stroke="black" />
                             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                            <XAxis dataKey="name" />
+                            <XAxis dataKey={this.props.dataNombre} />
                             <YAxis />
                             <Tooltip />
                             </LineChart> 

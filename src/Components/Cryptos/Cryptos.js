@@ -16,6 +16,10 @@ class Cryptos extends Component{
             dataNombre: '',
             dataImg: '',
             dataMkt: '',
+            dataCap: '',
+            dataMax: '',
+            dataCir: '',
+            dataTick: '',
             priceChart: []
         }
     }
@@ -83,7 +87,11 @@ class Cryptos extends Component{
                 dataDesc: data.description.es,
                 dataNombre: data.name,
                 dataImg: data.image.large,
-                dataMkt: data.market_data.current_price.usd
+                dataMkt: data.market_data.current_price.usd,
+                dataCap: data.market_data.market_cap.usd,
+                dataMax: data.market_data.max_supply,
+                dataCir: data.market_data.circulating_supply,
+                dataTick: data.tickers[0].base
             })
         })
         .catch(error => console.log(error))
@@ -115,8 +123,12 @@ class Cryptos extends Component{
                     dataNombre = {this.state.dataNombre}
                     dataImg = {this.state. dataImg}
                     dataMkt = {this.state.dataMkt}
+                    precio = {this.state.priceChart}
+                    dataCap = {this.state.dataCap}
+                    dataMax = {this.state.dataMax}
+                    dataCir = {this.state.dataCir}
                     dataMkt = {this.state.dataMkt}
-                    precio = {this.state.priceChart}/>
+                    dataTick = {this.state.dataTick}/>
                  <div>
                     <FiltrarCrypto  filtrarCrypto = { (texto) => this.filtrarCrypto(texto) } />
                 </div> 
@@ -126,9 +138,8 @@ class Cryptos extends Component{
                 <div className="row card-container">                
                     { 
                         this.state.crypto.length === 0 ?
-                        <iframe src="https://giphy.com/embed/RgxAkfVQWwkjS" width="418" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
+                        <iframe src="https://giphy.com/embed/RgxAkfVQWwkjS" width="418" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>:
                         this.state.crypto.map((crypto, index)=><Tarjetas key={crypto.name + index} dataCrypto={crypto}
-                        //Aqui debemos pasarle el método (borrarTarjeta) al hijo
                         borrar = {(idEliminar) => this.borrarCrypto(idEliminar) }
                         infoChart = {(idCrypto)=> this.chartCryptoInfo(idCrypto)}
                         />) 

@@ -23,8 +23,9 @@ class FiltrarCrypto extends Component{
             <React.Fragment>
                 {       
                   <form onSubmit = {(e) => this.noEnviar(e) }>
-                        <label for='nombre'>Que estas buscando?</label>
-                        <input  placeholder="Que queres buscar?" type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={ this.state.filtrarPor } />
+                        <label for='nombre'>Busca tu moneda favorita</label>
+                        <span> </span>
+                        <input type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={ this.state.filtrarPor } />
                   </form>   
                 }
             </React.Fragment>
