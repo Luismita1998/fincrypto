@@ -12,12 +12,12 @@ class Info extends Component{
         return(
             <React.Fragment>
                <p>{this.props.dataInfo}</p>
+               <Chart precioChart={this.props.precio}/>
+               <img src={this.props.dataImg} alt=""/>
                <p>{this.props.dataDesc}</p>
-               <p>{this.props.dataNombre}</p>
-               <img src={this.props.dataImg} alt="" />
                <p>{this.props.dataMkt}</p>
+               <p>{this.props.dataNombre}</p>
                {console.log(this.props.precio)}
-            <Chart precioChart={this.props.precio}/>
             </React.Fragment>
         )
     }

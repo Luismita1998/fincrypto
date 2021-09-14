@@ -119,8 +119,10 @@ class Cryptos extends Component{
                     precio = {this.state.priceChart}/>
                  <div>
                     <FiltrarCrypto  filtrarCrypto = { (texto) => this.filtrarCrypto(texto) } />
-                    <button onClick= {() => this.masCryptos()} id="cargar" className="btn btn-outline-dark my-2 my-sm-0" type="button">Cargar más 12 Cryptos mas</button>
                 </div> 
+                <div className="cargarmas" >
+                <button onClick= {() => this.masCryptos()} id="cargar" className="btn btn-outline-dark my-2 my-sm-0" type="button">Cargar 12 Cryptos mas</button>
+                </div>
                 <div className="row card-container">                
                     { 
                         this.state.crypto.length === 0 ?

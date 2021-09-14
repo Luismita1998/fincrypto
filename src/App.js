@@ -2,8 +2,6 @@ import React from "react"
 import Cryptos from './Components/Cryptos/Cryptos'
 import Header from './Components/Header/Header'
 import './App.css';
-import ChartCrypto from './Components/ChartCrypto/ChartCrypto'
-import Info from "./Components/Info/Info";
 
 function App() {
   return (
