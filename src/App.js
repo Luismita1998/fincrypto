@@ -7,12 +7,20 @@ function App() {
   return (
   <body>
     <div id="wrapper">
-      <div id="content-wrapper" className="d-flex flex-column">
+      < div id="content-wrapper" className="d-flex flex-column">
+
         <div id="content">
-        <Header/>    
-        <Cryptos />
+        <Header/>
+          <div className="container-fluid">
+                 
+            <Cryptos />
+        
+          </div>
         </div>
+
       </div>
+
+
     </div>
   </body>
   );
