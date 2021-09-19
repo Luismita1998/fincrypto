@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import Cryptos from '../Cryptos/Cryptos';
+// aclaramos que queremos traer el objeto {Component}
 
+// estos componentes statefull te permiten modificar la informacion interna a partir de eventos externos
+// creamos el componente FiltrarCrypto y usa como referente al objeto {Component}
 class FiltrarCrypto extends Component{
     constructor(props){
         super(props)
