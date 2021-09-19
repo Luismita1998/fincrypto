@@ -9,7 +9,6 @@ class Tarjetas extends Component{
             selected: false
         }
     }
-
     render(){
         let fontColor = this.props.dataCrypto.price_change_percentage_24h.toFixed(2) > 0 ? "color-nombres verde" : "color-nombres rojo"
             return(

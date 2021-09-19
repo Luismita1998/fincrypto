@@ -14,8 +14,8 @@ function App() {
         <Header/>
           <div className="container-fluid">
                  
-            <Cryptos />
-            
+          <Cryptos />
+        
           </div>
         </div>
         
