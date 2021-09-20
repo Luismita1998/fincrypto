@@ -24,7 +24,6 @@ class Cryptos extends Component{
         }
     }
     componentDidMount(){
-        console.log("Se cargo el ");
         let url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page='+this.state.contador+'&page=1&sparkline=false';
 
         fetch(url)
@@ -32,7 +31,6 @@ class Cryptos extends Component{
                 return respuesta.json()
             })    
             .then((data) => {
-                console.log(data);
                 this.setState({
                     crypto: data,
                     cryptoInicial: data,
@@ -70,7 +68,9 @@ class Cryptos extends Component{
             })
         })
     }
+    
     chartCryptoInfo(idCrypto){
+        window.scrollTo(0, 0)
         console.log("HOLAA");
         let url2 = 'https://api.coingecko.com/api/v3/coins/'+ idCrypto+'?localization=true&tickers=true&market_data=true&community_data=true';
         let url = 'https://api.coingecko.com/api/v3/coins/'+ idCrypto+'/market_chart?vs_currency=usd&days=10&interval=daily';
